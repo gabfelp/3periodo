@@ -1,0 +1,21 @@
+O arquivo principal tem como nome MONOCICLO.hds, quando aberto já possui um estado inicial salvo para a ROM, RAM e o MIPS REG BANK que serão pré colocados.
+
+Para executar o arquivo basta dar um reset no PC e fazer os ciclos de maneira manual ( foi feito dessa forma para poder comparar melhor as instruções caso a caso e ver as reais mudanças de valores/variáveis ).
+
+A ROM FOI PRE-SETADA COM : 
+ac2f0000 > faz o store de $a2
+00411820 > faz o add  $v1,$v0,$at
+8c460000 > faz uma lw da posição inicial
+00641022 > faz um sub 
+0043082a > faz um slt e coloca no $at	
+11ce0000 > faz um beq
+08100000 > jump para 0
+
+Foi utilizado um padrão de separação de 8 words entre uma instrução e outra.
+
+Os registradores também tem um pre-set e a memória ram é toda iniciada em zero. 
+
+O trabalho está funcionando normalmente com relação às instruções passadas. Vale lembrar que o clock utilizado como padrão é o manual, sendo possível trocar para o automático à escolha.
+
+Gabriel Felipe.
+

@@ -1,0 +1,87 @@
+
+
+# CONSIDERE QUE O X SEMPRE É LIDO PRIMEIRO E O Y DEPOIS, NA HORA DE LER OS PONTOS
+# CONSIDERE O PRIMEIRO NUMERO LIDO A QUANTIDADE DE C E O SEGUNDO A QUANTIDADE DE TIROS
+
+add $s7,$zero,$zero ## OS PONTOS
+
+addi $v0,$zero,5 # p ler, v0 = 5
+syscall #LÊ NUMERO DE C 
+add $s0,$v0,$zero
+
+addi $v0,$zero,5 # p ler, v0 = 5
+syscall #LÊ NUMERO DE TIROS
+add $s1,$v0,$zero
+
+add $t0,$s0,$s0
+add $t0,$t0,$t0 # 4*c para tirar do vetor
+
+sub $sp,$sp,$t0 #abre c espaços
+
+add $t1,$zero,$zero #t1 = 0
+
+## LÊ OS C'S
+while: beq $s0,$t1,endwhile #enquanto posição diferente do numero de c
+add $t2,$t1,$t1
+add $t2,$t2,$t2 #a posição *4
+add $t3,$t2,$sp # o lugar no vetor em que será colocado
+
+addi $v0,$zero,5 # p ler, v0 = 5
+syscall #LÊ O RAIO
+add $s4,$v0,$zero # s4 = RAIO
+
+sw $s4,0($t3) #GUARDA RAIO
+
+addi $t1,$t1,1
+add $t2,$zero,$zero
+j while
+endwhile:
+
+add $t4,$zero,$zero #zera t4
+
+# LÊ TIROS
+whiletiro: beq $s1,$t4,endwhiletiro #numero de tiros
+
+addi $v0,$zero,5 # p ler, v0 = 5
+syscall #LÊ O X
+add $s5,$v0,$zero # s5 = X
+mul $s5,$s5,$s5 #x²
+
+addi $v0,$zero,5 # p ler, v0 = 5
+syscall #LÊ O Y
+add $s6,$v0,$zero # s6 = Y
+mul $s6,$s6,$s6 #y²
+
+add $s5,$s5,$s6 # x² + y²
+
+#COMPARA OS RAIOS COM O Y E X
+add $t1,$zero,$zero
+whilecompara: beq $s0,$t1,endwhilecompara
+
+add $t2,$t1,$t1
+add $t2,$t2,$t2 #a posição *4
+add $t3,$t2,$sp # o lugar no vetor em que será retirado
+
+lw $s6,0($t3) #PEGA O RAIO
+mul $s6,$s6,$s6 #r²
+
+slt $t5,$s5,$s6 # COLOCA 1 EM t5 se s5 for menor que s6, coloca 0 se for maior
+#vê se são iguais
+bne $s5,$s6,endifigual
+addi $t5,$t5,1
+endifigual:
+
+add $s7,$s7,$t5 # SOMA 1 SE FOR MENOR ou igual ao r // r² >= y²+x²
+addi $t1,$t1,1
+
+j whilecompara
+endwhilecompara:
+
+addi $t4,$t4,1
+j whiletiro
+endwhiletiro:
+
+#ESCREVE O RESULTADO
+addi $v0,$zero,1
+addi $a0,$s7,0
+syscall

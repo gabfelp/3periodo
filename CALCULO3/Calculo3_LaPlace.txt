@@ -1,0 +1,19 @@
+DEF : Seja f uma função definida em 0<=t<infinito com t e f(t) reais.
+
+A transformada de Laplace de f é definida por L{f(t)} = F(s) e F(s) = integral de 0 à infinito de e^(-st)f(t)dt ou F(S)=Lim a>infinito integral de 0 até a e^(-st)f(t)dt, onde s é um número complexo. L{f(t)}=F(s) até L^-1 {F(s)} = f(t).
+
+L{af+bg}=aL{f}+bL{g}
+
+A transformação de Laplace é uma transformação linear. De fato, sejam f e g funções cuja transformada de Laplace existam e a e b constantes quaisquer. Então :
+
+
+///// demonstração /////
+
+
+
+Condições de Existência:
+
+Funções contínuas em partes : É chamada de contínua por partes ou seccionalmente contínua
+
+*Funções de ordem exponencial : função f é dita de ordem exponencial se 
+

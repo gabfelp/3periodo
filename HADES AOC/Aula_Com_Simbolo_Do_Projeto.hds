@@ -1,0 +1,15 @@
+# hades.models.Design file
+#  
+[name] unnamed
+[components]
+hades.models.rtlib.io.OpinVector i2 18000 6000 @N 1001 3 1.0E-9 2
+hades.models.rtlib.io.IpinVector i1 9000 5400 @N 1001 2 11_B 1.0E-9 2
+hades.models.rtlib.io.IpinVector i0 9000 6600 @N 1001 6 001010_B 1.0E-9 2
+hades.models.Design Aula27_04 11400 5400 @N 1001 C:/Users/Gabriel/Documents/1ENGENHARIA\u0020DA\u0020COMPUTA\u00c7\u00c3O/HADES\u0020AOC/Aula27_04.hds
+[end components]
+[signals]
+hades.signals.SignalStdLogicVector n2 3 2 Aula27_04 i11 i2 A 1 2 16200 6000 18000 6000 0 
+hades.signals.SignalStdLogicVector n1 2 2 i1 Y Aula27_04 i1 3 2 11400 6000 9600 6000 2 9600 6000 9600 5400 2 9600 5400 9000 5400 0 
+hades.signals.SignalStdLogicVector n0 6 2 i0 Y Aula27_04 i0 1 2 9000 6600 11400 6600 0 
+[end signals]
+[end]

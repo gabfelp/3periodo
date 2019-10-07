@@ -1,0 +1,5 @@
+add $v1,$v0,$at
+sub $v1,$v0,$at
+beq $a0,$a0,l
+j l
+l:

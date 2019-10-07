@@ -1,0 +1,32 @@
+.data
+a:.asciiz "\nHELLO WORLD|"
+.text
+
+
+addi $v0,$zero,5 # p ler, v0 = 5
+syscall
+add $s0,$v0,$zero
+addi $v0,$zero,5
+syscall
+add $s1,$v0,$zero
+add $a0,$s0,$s1 # a0 é o inteiro
+addi $v0,$zero,1
+syscall # p imprimir, v0 = 1
+
+
+la $a0,a
+addi $v0,$zero,4 #SYSCALL EXIBIR STRING
+syscall
+
+
+
+## OUTRAS COISAS LOUCAS
+addi $v0,$zero,5 # p ler, v0 = 5
+syscall
+sw $v0,0($sp)
+addi $v0,$zero,5 # p ler, v0 = 5
+syscall
+sw $v0,4($sp)
+addi $v0,$zero,4
+addi $a0,$sp,0
+syscall

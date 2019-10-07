@@ -1,0 +1,31 @@
+# hades.models.Design file
+#  
+[name] unnamed
+[components]
+hades.models.io.Ipin i8 -6600 9000 @N 1001 null U
+hades.models.io.Ipin i7 -6600 7800 @N 1001 null U
+hades.models.rtlib.arith.Add i6 3600 15000 @N 1001 8 UUUUUUUU_B 1.0E-8
+hades.models.io.Ipin i5 -6600 6600 @N 1001 null U
+hades.models.io.Ipin i4 -6600 5400 @N 1001 null U
+hades.models.io.Ipin i3 -6600 4200 @N 1001 null U
+hades.models.io.Ipin i2 -6600 3000 @N 1001 null U
+hades.models.rtlib.io.MergeBits i1 -600 12600 @N 1001 8 1.0E-8
+hades.models.rtlib.io.OpinVector i0 13800 19200 @N 1001 8 1.0E-9 0
+hades.models.rtlib.io.IpinVector i11 9600 3600 @N 1001 8 00001110_B 1.0E-9 0
+hades.models.io.Ipin i10 -6600 11400 @N 1001 null U
+hades.models.io.Ipin i9 -6600 10200 @N 1001 null U
+[end components]
+[signals]
+hades.signals.SignalStdLogicVector n9 8 2 i11 Y i6 B 4 2 7200 15000 7200 6000 2 7200 6000 10800 6000 2 10800 6000 10800 3600 2 10800 3600 9600 3600 0 
+hades.signals.SignalStdLogicVector n8 8 2 i1 Y i6 A 3 2 0 13800 0 14400 2 0 14400 4800 14400 2 4800 14400 4800 15000 0 
+hades.signals.SignalStdLogic1164 n7 2 i2 Y i1 A0 2 2 4200 12600 4200 3000 2 4200 3000 -6600 3000 0 
+hades.signals.SignalStdLogic1164 n6 2 i3 Y i1 A1 2 2 -6600 4200 3600 4200 2 3600 4200 3600 12600 0 
+hades.signals.SignalStdLogic1164 n5 2 i4 Y i1 A2 2 2 -6600 5400 3000 5400 2 3000 5400 3000 12600 0 
+hades.signals.SignalStdLogic1164 n4 2 i5 Y i1 A3 2 2 -6600 6600 2400 6600 2 2400 6600 2400 12600 0 
+hades.signals.SignalStdLogic1164 n3 2 i7 Y i1 A4 2 2 -6600 7800 1800 7800 2 1800 7800 1800 12600 0 
+hades.signals.SignalStdLogic1164 n2 2 i8 Y i1 A5 2 2 -6600 9000 1200 9000 2 1200 9000 1200 12600 0 
+hades.signals.SignalStdLogic1164 n1 2 i9 Y i1 A6 2 2 600 12600 600 10200 2 600 10200 -6600 10200 0 
+hades.signals.SignalStdLogic1164 n0 2 i10 Y i1 A7 2 2 -6600 11400 0 11400 2 0 11400 0 12600 0 
+hades.signals.SignalStdLogicVector n10 8 2 i6 SUM i0 A 2 2 6000 17400 6000 19200 2 6000 19200 13800 19200 0 
+[end signals]
+[end]
